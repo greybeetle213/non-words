@@ -2,7 +2,7 @@ var xhttp = new XMLHttpRequest() // create a XMLHttpRequest called xhhtp
 xhttp.onreadystatechange = function() { // when the XMLHttpRequest becomes ready (the file with the words in it is loaded) run a function
     if (this.readyState == 4 && this.status == 200) {
         allWords = xhttp.responseText // set wordToGuess to be the contense of the file
-        allWords = allWords.split("\n") // turn the file into a list where the delimters are where there were origanaly line breaks
+        allWords = allWords.split("\r\n") // turn the file into a list where the delimters are where there were origanaly line breaks
     }
 }
 xhttp.open("GET", "NonWords.csv", true) // set the XMLHttpRequest to be get WordList.csv (a long list of words)
