@@ -10,7 +10,7 @@ function init(){
         }
     }
     if(!maori){
-        document.getElementById("words").innerHTML += "<a href="maori-index.html">Switch to Maori</a>"
+        document.getElementById("words").innerHTML += '<a href="maori-index.html">Switch to Maori</a>'
     }
 }
 var xhttp = new XMLHttpRequest() // create a XMLHttpRequest called xhhtp
