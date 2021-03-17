@@ -9,7 +9,9 @@ function init(){
             document.getElementById("words").innerHTML += "<p></p>"
         }
     }
-    document.getElementById("words").innerHTML += "<button>Switch to Maori</button>"
+    if(!maori){
+        document.getElementById("words").innerHTML += "<a href="maori-index.html">Switch to Maori</a>"
+    }
 }
 var xhttp = new XMLHttpRequest() // create a XMLHttpRequest called xhhtp
 xhttp.onreadystatechange = function() { // when the XMLHttpRequest becomes ready (the file with the words in it is loaded) run a function
