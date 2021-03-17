@@ -61,7 +61,11 @@ function calculateScore(equsion){
 }
 function update(){
     if(turn == 10){
-        document.getElementById("words").innerHTML = '<button onclick="showAnswers()" style="height: 15%; width: 100%; font-size: 3vw;"> Show Answers </button>'
+        if(!maori){
+            document.getElementById("words").innerHTML = '<button onclick="showAnswers()" style="height: 15%; width: 100%; font-size: 3vw;"> Show Answers </button>'
+        }else{
+            document.getElementById("words").innerHTML = '<button onclick="showAnswers()" style="height: 15%; width: 100%; font-size: 3vw;"> Whakamutunga </button>'
+        }
         document.getElementById("p2").style.backgroundColor = "white"
     }
 }
