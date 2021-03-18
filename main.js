@@ -26,6 +26,10 @@ xhttp.onreadystatechange = function() { // when the XMLHttpRequest becomes ready
         init()
     }
 }
-xhttp.open("GET", "https://raw.githubusercontent.com/greybeetle213/non-words/main/NonWords.csv", true) // set the XMLHttpRequest to be get WordList.csv (a long list of words)
+if(maori){
+    xhttp.open("GET", "maomeans", true) // set the XMLHttpRequest to be get WordList.csv (a long list of words)
+}else{
+    xhttp.open("GET", "NonWords", true) // set the XMLHttpRequest to be get WordList.csv (a long list of words)
+}
 xhttp.send() // send the request
 
