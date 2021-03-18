@@ -100,9 +100,9 @@ function showAnswers(){
     P2answers += " = " + String(calculateScore(P2equasion)).substr(0,4)
     document.getElementById("p2").innerHTML = P2answers
     if(!maori){
-        document.getElementById("words").innerHTML += '<br> <button onClick="window.location.reload();" style="height: 15%; width: 100%; font-size: 3vw;">Play Again</button>'
+        document.getElementById("words").innerHTML = '<button onClick="window.location.reload();" style="height: 15%; width: 100%; font-size: 3vw;">Play Again</button>'
     }else{
-        document.getElementById("words").innerHTML += '<br> <button onClick="window.location.reload();" style="height: 15%; width: 100%; font-size: 3vw;">Takaro Anō</button>'
+        document.getElementById("words").innerHTML = '<button onClick="window.location.reload();" style="height: 15%; width: 100%; font-size: 3vw;">Takaro Anō</button>'
     }
     if(calculateScore(P1equasion) > calculateScore(P2equasion)){
         document.getElementById("p1").style.backgroundColor = "lightgreen"
