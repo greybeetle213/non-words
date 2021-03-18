@@ -104,5 +104,14 @@ function showAnswers(){
     }else{
         document.getElementById("words").innerHTML += '<br> <button onClick="window.location.reload();" style="height: 15%; width: 100%; font-size: 3vw;">Takaro Anō</button>'
     }
+    if(calculateScore(P1equasion) > calculateScore(P2equasion)){
+        document.getElementById("p1").style.backgroundColor = "lightgreen"
+        document.getElementById("p2").style.backgroundColor = "lightred"
+    }else{
+        document.getElementById("p2").style.backgroundColor = "lightgreen"
+        document.getElementById("p1").style.backgroundColor = "lightred"
+    }
+
+
 
 }
