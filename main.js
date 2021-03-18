@@ -11,6 +11,8 @@ function init(){
     }
     if(!maori){
         document.getElementById("words").innerHTML += '<a href="maori-index.html">Switch to Maori</a>'
+    }else{
+        document.getElementById("words").innerHTML += '<a href="maori-index.html">Whakawhiti ki te reo pākehā</a>'
     }
 }
 var xhttp = new XMLHttpRequest() // create a XMLHttpRequest called xhhtp
