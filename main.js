@@ -27,9 +27,9 @@ xhttp.onreadystatechange = function() { // when the XMLHttpRequest becomes ready
     }
 }
 if(maori){
-    xhttp.open("GET", "maomeans", true) // set the XMLHttpRequest to be get WordList.csv (a long list of words)
+    xhttp.open("GET", "maomeans.csv", true) // set the XMLHttpRequest to be get WordList.csv (a long list of words)
 }else{
-    xhttp.open("GET", "NonWords", true) // set the XMLHttpRequest to be get WordList.csv (a long list of words)
+    xhttp.open("GET", "NonWords.csv", true) // set the XMLHttpRequest to be get WordList.csv (a long list of words)
 }
 xhttp.send() // send the request
 
