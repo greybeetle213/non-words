@@ -106,10 +106,10 @@ function showAnswers(){
     }
     if(calculateScore(P1equasion) > calculateScore(P2equasion)){
         document.getElementById("p1").style.backgroundColor = "lightgreen"
-        document.getElementById("p2").style.backgroundColor = "lightred"
+        document.getElementById("p2").style.backgroundColor = "pink"
     }else{
         document.getElementById("p2").style.backgroundColor = "lightgreen"
-        document.getElementById("p1").style.backgroundColor = "lightred"
+        document.getElementById("p1").style.backgroundColor = "pink"
     }
 
 
