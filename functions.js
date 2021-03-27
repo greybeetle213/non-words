@@ -16,6 +16,11 @@ function P1buttons(act){
         selectedWord = "gone"
         document.getElementById("p1").style.backgroundColor = "lightgray"
         document.getElementById("p2").style.backgroundColor = "white"
+        if(maori){
+            document.getElementById("instructions").innerHTML = "P2 kupu kupu"
+        }else{
+            document.getElementById("instructions").innerHTML = "P2 kupu kupu"
+        }
     }
     update()
 }
@@ -37,6 +42,11 @@ function P2buttons(act){
         selectedWord = "gone"
         document.getElementById("p2").style.backgroundColor = "lightgray"
         document.getElementById("p1").style.backgroundColor = "white"
+        if(maori){
+            document.getElementById("instructions").innerHTML = "P1 kupu kupu"
+        }else{
+            document.getElementById("instructions").innerHTML = "P1 Choose a word"
+        }
     }
     update()
 }
@@ -46,6 +56,11 @@ function selectWord(id){
     }catch{}
     selectedWord = id
     document.getElementById(String(selectedWord)).style.backgroundColor = "green"
+    if(maori){
+        document.getElementById("instructions").innerHTML = "kupu kupu [+] [x] kupu"
+    }else{
+        document.getElementById("instructions").innerHTML = "Press the [+] or [x] button or select a new word"
+    }
 }
 function calculateScore(equsion){
     var score = 0
@@ -66,6 +81,11 @@ function update(){
         }else{
             document.getElementById("words").innerHTML = '<button onclick="showAnswers()" style="height: 15%; width: 100%; font-size: 3vw;"> Whakamutunga </button>'
         }
+        if(maori){
+            document.getElementById("instructions").innerHTML = "kupu kupu [Whakamutunga] kupu"
+        }else{
+            document.getElementById("instructions").innerHTML = "Click [Show Answers] to see who won the round!"
+        }
         document.getElementById("p2").style.backgroundColor = "white"
     }
 }
@@ -76,13 +96,13 @@ function showAnswers(){
             if(c != 0){
                 P1answers += " x "
             }
-            P1answers += P1equasion[i][c][1] + "(" + String(P1equasion[i][c][2]).substr(0,4) + ")"
+            P1answers += P1equasion[i][c][1] + "(" + String(P1equasion[i][c][2]) + ")"
         }
         if(i != P1equasion.length - 1){
             P1answers += " + "
         }
     }
-    P1answers += " = " + String(calculateScore(P1equasion)).substr(0,4)
+    P1answers += " = " + String(calculateScore(P1equasion))
     document.getElementById("p1").innerHTML = P1answers
     
     var P2answers = ""
@@ -91,27 +111,47 @@ function showAnswers(){
             if(c != 0){
                 P2answers += " x "
             }
-            P2answers += P2equasion[i][c][1] + "(" + String(P2equasion[i][c][2]).substr(0,4) + ")"
+            P2answers += P2equasion[i][c][1] + "(" + String(P2equasion[i][c][2]) + ")"
         }
         if(i != P2equasion.length - 1){
             P2answers += " + "
         }
     }
-    P2answers += " = " + String(calculateScore(P2equasion)).substr(0,4)
+    P2answers += " = " + String(calculateScore(P2equasion))
     document.getElementById("p2").innerHTML = P2answers
     if(!maori){
-        document.getElementById("words").innerHTML = '<button onClick="window.location.reload();" style="height: 15%; width: 100%; font-size: 3vw;">Play Again</button>'
+        document.getElementById("words").innerHTML = '<button onClick="init();" style="height: 15%; width: 100%; font-size: 3vw;">Next Round</button>'
     }else{
-        document.getElementById("words").innerHTML = '<button onClick="window.location.reload();" style="height: 15%; width: 100%; font-size: 3vw;">Takaro Anō</button>'
+        document.getElementById("words").innerHTML = '<button onClick="init()" style="height: 15%; width: 100%; font-size: 3vw;">Takaro Anō</button>'
     }
     if(calculateScore(P1equasion) > calculateScore(P2equasion)){
         document.getElementById("p1").style.backgroundColor = "lightgreen"
         document.getElementById("p2").style.backgroundColor = "pink"
+        P1score += 1
     }else{
         document.getElementById("p2").style.backgroundColor = "lightgreen"
         document.getElementById("p1").style.backgroundColor = "pink"
+        P2score += 1
     }
-
+    document.getElementById("instructions").innerHTML = "Click [Next Round] to play another game!"
+    Round += 1
+    if(Round == 5 && !maori){
+        if(P1score > P2score){
+            document.getElementById("words").innerHTML = '<span style="color: green">Player one wins the game!</span>'
+        }
+        if(P1score < P2score){
+            document.getElementById("words").innerHTML = '<span style="color: green; font-size: xx-large;">Player two wins the game!</span>'
+        }
+    }
+    if(Round == 5 && maori){
+        if(P1score > P2score){
+            document.getElementById("words").innerHTML = '<span style="color: green">P1 kupu kupu kupu</span>'
+        }
+        if(P1score < P2score){
+            document.getElementById("words").innerHTML = '<span style="color: green; font-size: xx-large;">P2 kupu kupu kupu</span>'
+        }
+    }
+    
 
 
 }
