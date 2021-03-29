@@ -38,8 +38,8 @@ xhttp.onreadystatechange = function() { // when the XMLHttpRequest becomes ready
         }else{
             document.getElementById("words").innerHTML += '<a href="index.html">Whakawhiti ki te reo pākehā</a>'
         }
-        document.getElementById("p1").innerHTML = '<button onclick="P1buttons(\'+\')">+</button><button onclick="P1buttons(\'x\')">x</button> Wins: '+P1score + '<br>'
-        document.getElementById("p2").innerHTML = '<button onclick="P2buttons(\'+\')">+</button><button onclick="P2buttons(\'x\')">x</button> Wins: '+P2score + '<br>'
+        document.getElementById("p1").innerHTML = '<button onclick="P1buttons(\'+\')">+</button><button onclick="P1buttons(\'x\')">x</button> 1: Wins: '+P1score + '<br>'
+        document.getElementById("p2").innerHTML = '<button onclick="P2buttons(\'+\')">+</button><button onclick="P2buttons(\'x\')">x</button> 2: Wins: '+P2score + '<br>'
 
     }
 }
