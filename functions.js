@@ -85,10 +85,10 @@ function update(){
             document.getElementById("instructions").innerHTML = "Whiriwhirita [Tatau], kia kitea ngā tatau!"
         }else{
             document.getElementById("instructions").innerHTML = "Select [Show Totals] to see who won the round!"
-        }
+        } */
         document.getElementById("p2").style.backgroundColor = "white"
-    }
-}*/
+    } 
+}
 function showAnswers(){
     var P1answers = ""
     for(i = 0; i != P1equasion.length; i ++){
@@ -133,7 +133,7 @@ function showAnswers(){
         document.getElementById("p1").style.backgroundColor = "pink"
         P2score += 1
     }
-    /* document.getElementById("instructions").innerHTML = "Click [Next Round] to play another game!" */
+    document.getElementById("instructions").innerHTML = " " 
     Round += 1
     if(Round == 5 && !maori){
         if(P1score > P2score){
@@ -151,7 +151,4 @@ function showAnswers(){
             document.getElementById("words").innerHTML = '<span style="color: green; font-size: xx-large;">Ko kaitākaro 2 te toa! (Whakahauoratia te whārangi, ki te tākaro anō) </span>'
         }
     }
-    
-
-
 }
