@@ -77,14 +77,14 @@ function calculateScore(equsion){
 function update(){
     if(turn == 10){
         if(!maori){
-            document.getElementById("words").innerHTML = '<button onclick="showAnswers()" style="height: 15%; width: 100%; font-size: 3vw;"> End </button>'
+            document.getElementById("words").innerHTML = '<button onclick="showAnswers()" style="height: 15%; width: 100%; font-size: 3vw;"> Show Totals </button>'
         }else{
-            document.getElementById("words").innerHTML = '<button onclick="showAnswers()" style="height: 15%; width: 100%; font-size: 3vw;"> Whakaotia </button>'
+            document.getElementById("words").innerHTML = '<button onclick="showAnswers()" style="height: 15%; width: 100%; font-size: 3vw;"> Tatau </button>'
         }
         if(maori){
-            document.getElementById("instructions").innerHTML = "Whiriwhirita [Whakaotia], kia kitea ko wai te toa!"
+            document.getElementById("instructions").innerHTML = "Whiriwhirita [Tatau], kia kitea ngā tatau!"
         }else{
-            document.getElementById("instructions").innerHTML = "Select [End] to see who won the game!"
+            document.getElementById("instructions").innerHTML = "Select [Show Totals] to see who won the round!"
         }
         document.getElementById("p2").style.backgroundColor = "white"
     }
@@ -122,7 +122,7 @@ function showAnswers(){
     if(!maori){
         document.getElementById("words").innerHTML = '<button onClick="init();" style="height: 15%; width: 100%; font-size: 3vw;">Next Round</button>'
     }else{
-        document.getElementById("words").innerHTML = '<button onClick="init()" style="height: 15%; width: 100%; font-size: 3vw;">Takaro Anō</button>'
+        document.getElementById("words").innerHTML = '<button onClick="init()" style="height: 15%; width: 100%; font-size: 3vw;">Haere Tonu</button>'
     }
     if(calculateScore(P1equasion) > calculateScore(P2equasion)){
         document.getElementById("p1").style.backgroundColor = "lightgreen"
@@ -133,14 +133,16 @@ function showAnswers(){
         document.getElementById("p1").style.backgroundColor = "pink"
         P2score += 1
     }
-    document.getElementById("instructions").innerHTML = "Click [Next Round] to play another game!" 
+    /* document.getElementById("instructions").innerHTML = "Click [Next Round] to play another game!" */
     Round += 1
     if(Round == 5 && !maori){
         if(P1score > P2score){
-            document.getElementById("words").innerHTML = '<span style="color: green">Player one wins the game!  Refresh the page to restart.</span>'
+            document.getElementById("words").innerHTML = '<span style="color: green; font-size: xx-large;">Player one wins the game!</span>'
+            document.getElementById("words").innerHTML = '<span style="color: green; font-size: large;">Refresh the page to restart.</span>'
         }
         if(P1score < P2score){
             document.getElementById("words").innerHTML = '<span style="color: green; font-size: xx-large;">Player two wins the game!  Refresh the page to restart.</span>'
+            document.getElementById("words").innerHTML = '<span style="color: green; font-size: large;">Refresh the page to restart.</span>'
         }
     }
     if(Round == 5 && maori){
