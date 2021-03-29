@@ -34,9 +34,9 @@ xhttp.onreadystatechange = function() { // when the XMLHttpRequest becomes ready
         }
         document.getElementById("p1").innerHTML = ""
         if(!maori){
-            document.getElementById("words").innerHTML += '<a href="maori-index.html">Return to Instruction Page</a>'
+            document.getElementById("words").innerHTML += '<a href="https://jenniferhay.github.io/ororeo/">Return to Instruction Page</a>'
         }else{
-            document.getElementById("words").innerHTML += '<a href="index.html">Hoki ki te whārangi tohutohu</a>'
+            document.getElementById("words").innerHTML += '<a href="https://jenniferhay.github.io/ororeo/">Hoki ki te whārangi tohutohu</a>'
         }
 
         if(!maori){
