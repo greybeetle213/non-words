@@ -137,18 +137,18 @@ function showAnswers(){
     Round += 1
     if(Round == 5 && !maori){
         if(P1score > P2score){
-            document.getElementById("words").innerHTML = '<span style="color: green; font-size: xx-large;">Player one wins the game! (Refresh the page to restart)</span>'
+            document.getElementById("words").innerHTML = '<span style="color: green; font-size: xx-large;">Player one wins the game! <button onclick="window.location.reload()">Play Again</button><button href="https://jenniferhay.github.io/ororeo/">Go To Instruction Page</button></span>'
         }
         if(P1score < P2score){
-            document.getElementById("words").innerHTML = '<span style="color: green; font-size: xx-large;">Player two wins the game!  (Refresh the page to restart)</span>'
+            document.getElementById("words").innerHTML = '<span style="color: green; font-size: xx-large;">Player two wins the game! <button onclick="window.location.reload()">Play Again</button><button href="https://jenniferhay.github.io/ororeo/">Go To Instruction Page</button></span>'
         }
     }
     if(Round == 5 && maori){
         if(P1score > P2score){
-            document.getElementById("words").innerHTML = '<span style="color: green;  font-size: xx-large;">Ko kaitākaro 1 te toa!  (Whakahauoratia te whārangi, ki te tākaro anō)</span>'
+            document.getElementById("words").innerHTML = '<span style="color: green;  font-size: xx-large;">Ko kaitākaro 1 te toa!  <button onclick="window.location.reload()">Tākaro Anō</button><button href="https://jenniferhay.github.io/ororeo/">Hokia ki te Whārangi Tohutohu</button></span>'
         }
         if(P1score < P2score){
-            document.getElementById("words").innerHTML = '<span style="color: green; font-size: xx-large;">Ko kaitākaro 2 te toa! (Whakahauoratia te whārangi, ki te tākaro anō) </span>'
+            document.getElementById("words").innerHTML = '<span style="color: green; font-size: xx-large;">Ko kaitākaro 2 te toa! <button onclick="window.location.reload()">Tākaro Anō</button><button href="https://jenniferhay.github.io/ororeo/">Hokia ki te Whārangi Tohutohu</button> </span>'
         }
     }
 }

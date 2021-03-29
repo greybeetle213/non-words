@@ -1,5 +1,5 @@
 function init(){
-    if(maori){
+    if(maori){ // PREFIX TO BYPASSS PROTOCAL: https://raw.githubusercontent.com/greybeetle213/non-words/main/
         xhttp.open("GET", "maomeans.csv", true) // set the XMLHttpRequest to be get WordList.csv (a long list of words)
     }else{
         //xhttp.open("GET", "NonWords.csv", true) // set the XMLHttpRequest to be get WordList.csv (a long list of words)
@@ -37,6 +37,11 @@ xhttp.onreadystatechange = function() { // when the XMLHttpRequest becomes ready
             document.getElementById("words").innerHTML += '<a href="https://jenniferhay.github.io/ororeo/">Return to Instruction Page</a>'
         }else{
             document.getElementById("words").innerHTML += '<a href="https://jenniferhay.github.io/ororeo/">Hoki ki te whārangi tohutohu</a>'
+        }
+        if(maori){
+            document.getElementById("instructions").innerHTML = "Kaitākaro 1: Whiriwhiritia te kupu"
+        }else{
+            document.getElementById("instructions").innerHTML = "Player 1: Choose a word"
         }
 
         if(!maori){
