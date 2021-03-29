@@ -38,9 +38,14 @@ xhttp.onreadystatechange = function() { // when the XMLHttpRequest becomes ready
         }else{
             document.getElementById("words").innerHTML += '<a href="index.html">Whakawhiti ki te reo pākehā</a>'
         }
-        document.getElementById("p1").innerHTML = '<button onclick="P1buttons(\'+\')">+</button><button onclick="P1buttons(\'x\')">x</button> 1: Wins: '+P1score + '<br>'
-        document.getElementById("p2").innerHTML = '<button onclick="P2buttons(\'+\')">+</button><button onclick="P2buttons(\'x\')">x</button> 2: Wins: '+P2score + '<br>'
 
+        if(!maori){
+        document.getElementById("p1").innerHTML = '<button onclick="P1buttons(\'+\')">+</button><button onclick="P1buttons(\'x\')">x</button> Player 1: '+P1score + '<br>'
+        document.getElementById("p2").innerHTML = '<button onclick="P2buttons(\'+\')">+</button><button onclick="P2buttons(\'x\')">x</button> Player 2: '+P2score + '<br>'
+        }else{
+            document.getElementById("p1").innerHTML = '<button onclick="P1buttons(\'+\')">+</button><button onclick="P1buttons(\'x\')">x</button> Kaitākaro 1: '+P1score + '<br>'
+            document.getElementById("p2").innerHTML = '<button onclick="P2buttons(\'+\')">+</button><button onclick="P2buttons(\'x\')">x</button> Kaitākaro 2: '+P2score + '<br>'
+        }    
     }
 }
 P1score = 0

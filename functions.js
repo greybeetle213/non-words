@@ -17,9 +17,9 @@ function P1buttons(act){
         document.getElementById("p1").style.backgroundColor = "lightgray"
         document.getElementById("p2").style.backgroundColor = "white"
         if(maori){
-            document.getElementById("instructions").innerHTML = "P2 kupu kupu"
+            document.getElementById("instructions").innerHTML = "Kaitākaro 1: Whiriwhiritia te kupu"
         }else{
-            document.getElementById("instructions").innerHTML = "P2 Choose a word"
+            document.getElementById("instructions").innerHTML = "Player 2 Choose a word"
         }
     }
     update()
@@ -45,7 +45,7 @@ function P2buttons(act){
         if(maori){
             document.getElementById("instructions").innerHTML = "Kaitākaro 1: Whiriwhiritia te kupu"
         }else{
-            document.getElementById("instructions").innerHTML = "P1: Choose a word"
+            document.getElementById("instructions").innerHTML = "Player 1: Choose a word"
         }
     }
     update()
@@ -77,9 +77,9 @@ function calculateScore(equsion){
 function update(){
     if(turn == 10){
         if(!maori){
-            document.getElementById("words").innerHTML = '<button onclick="showAnswers()" style="height: 15%; width: 100%; font-size: 3vw;"> Show Totals </button>'
+            document.getElementById("words").innerHTML = '<button onclick="showAnswers()" style="height: 15%; width: 100%; font-size: 3vw;"> End </button>'
         }else{
-            document.getElementById("words").innerHTML = '<button onclick="showAnswers()" style="height: 15%; width: 100%; font-size: 3vw;"> Whakakitea ngā tatau</button>'
+            document.getElementById("words").innerHTML = '<button onclick="showAnswers()" style="height: 15%; width: 100%; font-size: 3vw;"> Whakaotia </button>'
         }
         if(maori){
             document.getElementById("instructions").innerHTML = "Whiriwhirita [Whakaotia], kia kitea ko wai te toa!"
@@ -119,11 +119,11 @@ function showAnswers(){
     }
     P2answers += " = " + String(calculateScore(P2equasion))
     document.getElementById("p2").innerHTML = P2answers
-    /*if(!maori){
+    if(!maori){
         document.getElementById("words").innerHTML = '<button onClick="init();" style="height: 15%; width: 100%; font-size: 3vw;">Next Round</button>'
     }else{
         document.getElementById("words").innerHTML = '<button onClick="init()" style="height: 15%; width: 100%; font-size: 3vw;">Takaro Anō</button>'
-    }*/
+    }
     if(calculateScore(P1equasion) > calculateScore(P2equasion)){
         document.getElementById("p1").style.backgroundColor = "lightgreen"
         document.getElementById("p2").style.backgroundColor = "pink"
@@ -133,7 +133,7 @@ function showAnswers(){
         document.getElementById("p1").style.backgroundColor = "pink"
         P2score += 1
     }
-    /* document.getElementById("instructions").innerHTML = "Click [Next Round] to play another game!" */
+    document.getElementById("instructions").innerHTML = "Click [Next Round] to play another game!" 
     Round += 1
     if(Round == 5 && !maori){
         if(P1score > P2score){
