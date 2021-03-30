@@ -36,7 +36,7 @@ xhttp.onreadystatechange = function() { // when the XMLHttpRequest becomes ready
         if(!maori){
             document.getElementById("words").innerHTML += '<a href="https://jenniferhay.github.io/ororeo/">Return to Instruction Page</a>'
         }else{
-            document.getElementById("words").innerHTML += '<a href="https://jenniferhay.github.io/ororeo/">Hoki ki te whārangi tohutohu</a>'
+            document.getElementById("words").innerHTML += '<a href="https://jenniferhay.github.io/ororeo/">Hokia ki te whārangi tohutohu</a>'
         }
         if(maori){
             document.getElementById("instructions").innerHTML = "Kaitākaro 1: Whiriwhiritia te kupu"
